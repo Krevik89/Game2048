@@ -1,0 +1,33 @@
+﻿<Window x:Class="Game2048.GamePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game2048"
+        mc:Ignorable="d"
+        Title="2048" Height="520" Width="410" WindowStartupLocation="CenterScreen" Style="{StaticResource StyleWindow}">
+    <Canvas>
+        <TextBox Style="{StaticResource StyleTextBox1}" Canvas.Left="20" Canvas.Top="10" />
+        <TextBox Style="{StaticResource StyleTextBox1}"  Canvas.Left="200"  Canvas.Top="10" />
+        <!-- 1 ряд -->
+        <TextBox x:Name="null_null" Style="{StaticResource StyleTextbox2}"  Canvas.Left="20"  Canvas.Top="111"/>
+        <TextBox x:Name="null_one" Style="{StaticResource StyleTextbox2}"  Canvas.Left="110" Canvas.Top="111"/>
+        <TextBox x:Name="null_two" Style="{StaticResource StyleTextbox2}"  Canvas.Left="200" Canvas.Top="111"/>
+        <TextBox x:Name="null_three" Style="{StaticResource StyleTextbox2}"  Canvas.Left="290" Canvas.Top="111"/>
+        <!-- 2 ряд -->
+        <TextBox x:Name="one_null" Style="{StaticResource StyleTextbox2}"  Canvas.Left="20"  Canvas.Top="201"/>
+        <TextBox x:Name="one_one" Style="{StaticResource StyleTextbox2}"  Canvas.Left="110" Canvas.Top="201"/>
+        <TextBox x:Name="one_two" Style="{StaticResource StyleTextbox2}"  Canvas.Left="200" Canvas.Top="201"/>
+        <TextBox x:Name="one_three" Style="{StaticResource StyleTextbox2}"  Canvas.Left="290" Canvas.Top="201"/>
+        <!-- 3 ряд -->
+        <TextBox x:Name="two_null" Style="{StaticResource StyleTextbox2}"  Canvas.Left="20"  Canvas.Top="291"/>
+        <TextBox x:Name="two_one" Style="{StaticResource StyleTextbox2}"  Canvas.Left="110" Canvas.Top="291"/>
+        <TextBox x:Name="two_two" Style="{StaticResource StyleTextbox2}"  Canvas.Left="200" Canvas.Top="291"/>
+        <TextBox x:Name="two_three" Style="{StaticResource StyleTextbox2}"  Canvas.Left="290" Canvas.Top="291"/>
+        <!-- 4 ряд -->
+        <TextBox x:Name="three_null" Style="{StaticResource StyleTextbox2}"  Canvas.Left="20"  Canvas.Top="381"/>
+        <TextBox x:Name="three_one" Style="{StaticResource StyleTextbox2}"  Canvas.Left="110" Canvas.Top="381"/>
+        <TextBox x:Name="three_two" Style="{StaticResource StyleTextbox2}"  Canvas.Left="200" Canvas.Top="381"/>
+        <TextBox x:Name="three_three" Style="{StaticResource StyleTextbox2}"  Canvas.Left="290" Canvas.Top="381"/>
+    </Canvas>
+</Window>

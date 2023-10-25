@@ -1,0 +1,108 @@
+﻿<Application x:Class="Game2048.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Game2048"
+             >
+    <Application.Resources>
+        <!--стиль окна-->
+        <Style x:Key="StyleWindow" TargetType="Window">
+            <Setter Property="Width" Value="860"/>
+            <Setter Property="Height" Value="640"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="Background" Value="#f8f6e9">
+            </Setter>
+        </Style>
+        <!--стиль textbox1-->
+        <Style x:Key="StyleTextBox1" TargetType="TextBox">
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="7"/>
+            <Setter Property="Background" Value="#bbada0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--стиль текст бокса2-->
+        <Style x:Key="StyleTextbox2" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial Black"/>
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="BorderBrush" Value="#bbada0"/>
+            <Setter Property="BorderThickness" Value="7"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="Background" Value="#cdc1b5"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </Trigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="2">
+                    <Setter Property="Background" Value="#FADBD8" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="4">
+                    <Setter Property="Background" Value="#E74C3C" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="8">
+                    <Setter Property="Background" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="16">
+                    <Setter Property="Background" Value="#80ff00" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="32">
+                    <Setter Property="Background" Value="#1de81c" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="64">
+                    <Setter Property="Background" Value="#0140ff" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="128">
+                    <Setter Property="Background" Value="#0000fe" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="256">
+                    <Setter Property="Background" Value="#c001ff" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="528">
+                    <Setter Property="Background" Value="#ff00fe" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <!--стиль кнопок главного меню-->
+        <Style x:Key="StyleButton" TargetType="Button">
+            <Setter Property="Width" Value="290"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="7"/>
+            <Setter Property="Background" Value="#FF5E5A5A"/>
+            <Setter Property="FontFamily" Value="Arial Black"/>
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="#FFC81F1F"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="90">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
