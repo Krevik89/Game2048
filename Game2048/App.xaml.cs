@@ -19,7 +19,7 @@ namespace Game2048
             base.OnStartup(e);
 
             // Создание экземпляра окна "NewMainWindow"
-            GamePage menuPage = new GamePage();
+            MenuPage menuPage = new MenuPage();
 
             
             // Отображение главного окна
