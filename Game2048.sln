@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game2048", "Game2048\Game20
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{A4FDE0CD-232E-4D20-9B38-2894A4005384}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window_Authentification", "Window_Authentification\Window_Authentification.csproj", "{0F12C160-8EA9-402B-9910-DF4E65195127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{7ED720EA-1AC7-42C2-BF6A-D80F2B64267A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED720EA-1AC7-42C2-BF6A-D80F2B64267A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED720EA-1AC7-42C2-BF6A-D80F2B64267A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F12C160-8EA9-402B-9910-DF4E65195127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F12C160-8EA9-402B-9910-DF4E65195127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F12C160-8EA9-402B-9910-DF4E65195127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F12C160-8EA9-402B-9910-DF4E65195127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
