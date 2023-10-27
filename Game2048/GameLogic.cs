@@ -14,9 +14,7 @@ namespace Game2048
         public GameLogic()
         {
             array = new int[Length, Length];
-            FillArray();
-           
-
+            FillArray();           
             Initialize();
         }
         private void Initialize()
@@ -27,6 +25,7 @@ namespace Game2048
                 FillArray();
             }
         }
+
         public void FillArray()
         {
             random = new Random();
@@ -258,7 +257,6 @@ namespace Game2048
 
             return mergeIndex;
         }
-
 
     }
 }

@@ -24,7 +24,9 @@ namespace Game2048
     {
         GameLogic logic = new GameLogic();
         private TextBox[,] textBoxArray;
-        MenuPage menuPage; 
+        MenuPage menuPage;
+        private int Score1 = 0; 
+        private int Score2 = 0;
 
         public GamePage()
         {
@@ -50,6 +52,8 @@ namespace Game2048
                 }
             }
             this.PreviewKeyDown += GamePage_PreviewKeyDown;
+
+            
         }
 
         private void GamePage_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -78,21 +82,33 @@ namespace Game2048
 
             if (moved)
             {
-                UpdateTextBoxValues(); // Обновление значений в TextBox после операции сдвига или объединения
+                
+                // Обновление значений в TextBox после операции сдвига или объединения
                 if (logic.IsGameOver() == false)
                 {
-                    e.Handled = true; // Пометка события как обработанного
+                    e.Handled = true;
+                    int maxNumber = GetMaxNumber();
+                    Score1 = Math.Max(Score1, maxNumber);
+
+                    // Обновляем TextBox с текущим счетом
+                    UpdateTextBoxValues();
                 }                                                                  
                 else
                 {
                     MessageBox.Show("Игра окончена!");
-                    // Получить доступ к NavigationService через текущий объект окна
+                    if (Score1 > Score2)
+                    {
+                        Score2 = Score1;
+                    }
+
+                    Score1 = 0;
+
+                    UpdateTextBoxValues();
+
                     menuPage = new MenuPage();
                     Hide();
                     menuPage.Show();
-                }            
-                    
-
+                }                              
             }           
         }
 
@@ -106,6 +122,8 @@ namespace Game2048
                     textBoxArray[row, col].Text = cellValue != 0 ? cellValue.ToString() : string.Empty;
                 }
             }
+            Score.Text = Score1.ToString();
+            HScore.Text = Score2.ToString();
         }
 
         private void SetTextBoxValue(int row, int column, int value)
@@ -115,6 +133,21 @@ namespace Game2048
             {
                 textBox.Text = value.ToString();
             }
+        }
+
+        private int GetMaxNumber()
+        {
+            int maxNumber = 0;
+
+            foreach (TextBox textBox in textBoxArray)
+            {
+                if (!string.IsNullOrEmpty(textBox.Text) && int.TryParse(textBox.Text, out int number))
+                {
+                    maxNumber = Math.Max(maxNumber, number);
+                }
+            }
+
+            return maxNumber;
         }
     }
 }
